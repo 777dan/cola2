@@ -9,22 +9,25 @@ let products = [{ name: "Grapefruit", calories: 170, color: "red", sold: 8200 },
 ];
 
 function printProducts(products) {
+    let str = "";
     for (let i = 0; i < products.length; i++) {
-        document.write("Name: " + products[i].name +
+        str += "Name: " + products[i].name +
             ", Calories: " + products[i].calories +
             ", Color: " + products[i].color +
-            ", Sold: " + products[i].sold + "</br>");
+            ", Sold: " + products[i].sold + "</br>";
     }
+    document.getElementById("list").innerHTML = str;
 }
 
-function compareSold(colaA, colaB) {
-    if (colaA.sold > colaB.sold) {
-        return 1;
-    } else if (colaA.sold === colaB.sold) {
-        return 0;
-    } else {
-        return -1;
-    }
+//by name
+function sortByName() {
+    products.sort(compareName);
+    printProducts(products);
+}
+
+function sortByNameReverse() {
+    products.sort(compareNameReverse);
+    printProducts(products);
 }
 
 function compareName(colaA, colaB) {
@@ -37,6 +40,57 @@ function compareName(colaA, colaB) {
     }
 }
 
+function compareNameReverse(colaA, colaB) {
+    if (colaA.name < colaB.name) {
+        return 1;
+    } else if (colaA.name === colaB.name) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
+//by sold
+function sortBySold() {
+    products.sort(compareSold);
+    printProducts(products);
+}
+
+function sortBySoldReverse() {
+    products.sort(compareSoldReverse);
+    printProducts(products);
+}
+
+function compareSold(colaA, colaB) {
+    if (colaA.sold > colaB.sold) {
+        return 1;
+    } else if (colaA.sold === colaB.sold) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+function compareSoldReverse(colaA, colaB) {
+    if (colaA.sold < colaB.sold) {
+        return 1;
+    } else if (colaA.sold === colaB.sold) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
+//by color
+function sortByColor() {
+    products.sort(compareColor);
+    printProducts(products);
+}
+
+function sortByColorReverse() {
+    products.sort(compareColorReverse);
+    printProducts(products);
+}
+
 function compareColor(colaA, colaB) {
     if (colaA.color > colaB.color) {
         return 1;
@@ -46,8 +100,12 @@ function compareColor(colaA, colaB) {
         return -1;
     }
 }
-
-products.sort(compareSold);
-products.sort(compareName);
-products.sort(compareColor);
-printProducts(products);
+function compareColorReverse(colaA, colaB) {
+    if (colaA.color < colaB.color) {
+        return 1;
+    } else if (colaA.color === colaB.color) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
