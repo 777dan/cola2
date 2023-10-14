@@ -8,7 +8,7 @@ let products = [{ name: "Grapefruit", calories: 170, color: "red", sold: 8200 },
 { name: "Water", calories: 0, color: "clear", sold: 62123 }
 ];
 
-function printProducts(products) {
+let printProducts = (products) => {
     let str = "";
     for (let i = 0; i < products.length; i++) {
         str += "Name: " + products[i].name +
@@ -20,17 +20,17 @@ function printProducts(products) {
 }
 
 //by name
-function sortByName() {
+let sortByName = () => {
     products.sort(compareName);
     printProducts(products);
 }
 
-function sortByNameReverse() {
+let sortByNameReverse = () => {
     products.sort(compareNameReverse);
     printProducts(products);
 }
 
-function compareName(colaA, colaB) {
+let compareName = (colaA, colaB) => {
     if (colaA.name > colaB.name) {
         return 1;
     } else if (colaA.name === colaB.name) {
@@ -40,7 +40,7 @@ function compareName(colaA, colaB) {
     }
 }
 
-function compareNameReverse(colaA, colaB) {
+let compareNameReverse = (colaA, colaB) => {
     if (colaA.name < colaB.name) {
         return 1;
     } else if (colaA.name === colaB.name) {
@@ -51,17 +51,17 @@ function compareNameReverse(colaA, colaB) {
 }
 
 //by sold
-function sortBySold() {
+let sortBySold = () => {
     products.sort(compareSold);
     printProducts(products);
 }
 
-function sortBySoldReverse() {
+let sortBySoldReverse = () => {
     products.sort(compareSoldReverse);
     printProducts(products);
 }
 
-function compareSold(colaA, colaB) {
+let compareSold = (colaA, colaB) => {
     if (colaA.sold > colaB.sold) {
         return 1;
     } else if (colaA.sold === colaB.sold) {
@@ -70,7 +70,7 @@ function compareSold(colaA, colaB) {
         return -1;
     }
 }
-function compareSoldReverse(colaA, colaB) {
+let compareSoldReverse = (colaA, colaB) => {
     if (colaA.sold < colaB.sold) {
         return 1;
     } else if (colaA.sold === colaB.sold) {
@@ -81,17 +81,17 @@ function compareSoldReverse(colaA, colaB) {
 }
 
 //by color
-function sortByColor() {
+let sortByColor = () => {
     products.sort(compareColor);
     printProducts(products);
 }
 
-function sortByColorReverse() {
+let sortByColorReverse = () => {
     products.sort(compareColorReverse);
     printProducts(products);
 }
 
-function compareColor(colaA, colaB) {
+let compareColor = (colaA, colaB) => {
     if (colaA.color > colaB.color) {
         return 1;
     } else if (colaA.color === colaB.color) {
@@ -100,7 +100,7 @@ function compareColor(colaA, colaB) {
         return -1;
     }
 }
-function compareColorReverse(colaA, colaB) {
+let compareColorReverse = (colaA, colaB) => {
     if (colaA.color < colaB.color) {
         return 1;
     } else if (colaA.color === colaB.color) {
