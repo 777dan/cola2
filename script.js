@@ -21,91 +21,27 @@ let printProducts = (products) => {
 
 //by name
 let sortByName = () => {
-    products.sort(compareName);
-    printProducts(products);
+    printProducts(products.sort((a, b) => (a.name < b.name ? -1 : a.name == b.name ? 0 : 1)));
 }
 
 let sortByNameReverse = () => {
-    products.sort(compareNameReverse);
-    printProducts(products);
-}
-
-let compareName = (colaA, colaB) => {
-    if (colaA.name > colaB.name) {
-        return 1;
-    } else if (colaA.name === colaB.name) {
-        return 0;
-    } else {
-        return -1;
-    }
-}
-
-let compareNameReverse = (colaA, colaB) => {
-    if (colaA.name < colaB.name) {
-        return 1;
-    } else if (colaA.name === colaB.name) {
-        return 0;
-    } else {
-        return -1;
-    }
+    printProducts(products.sort((a, b) => (a.name > b.name ? -1 : a.name == b.name ? 0 : 1)));
 }
 
 //by sold
 let sortBySold = () => {
-    products.sort(compareSold);
-    printProducts(products);
+    printProducts(products.sort((a, b) => (a.sold - b.sold)));
 }
 
 let sortBySoldReverse = () => {
-    products.sort(compareSoldReverse);
-    printProducts(products);
-}
-
-let compareSold = (colaA, colaB) => {
-    if (colaA.sold > colaB.sold) {
-        return 1;
-    } else if (colaA.sold === colaB.sold) {
-        return 0;
-    } else {
-        return -1;
-    }
-}
-let compareSoldReverse = (colaA, colaB) => {
-    if (colaA.sold < colaB.sold) {
-        return 1;
-    } else if (colaA.sold === colaB.sold) {
-        return 0;
-    } else {
-        return -1;
-    }
+    printProducts(products.sort((a, b) => (b.sold - a.sold)));
 }
 
 //by color
 let sortByColor = () => {
-    products.sort(compareColor);
-    printProducts(products);
+    printProducts(products.sort((a, b) => (a.color < b.color ? -1 : a.color == b.color ? 0 : 1)));
 }
 
 let sortByColorReverse = () => {
-    products.sort(compareColorReverse);
-    printProducts(products);
-}
-
-let compareColor = (colaA, colaB) => {
-    if (colaA.color > colaB.color) {
-        return 1;
-    } else if (colaA.color === colaB.color) {
-        return 0;
-    } else {
-        return -1;
-    }
-}
-let compareColorReverse = (colaA, colaB) => {
-    if (colaA.color < colaB.color) {
-        return 1;
-    } else if (colaA.color === colaB.color) {
-        return 0;
-    } else {
-        return -1;
-    }
+    printProducts(products.sort((a, b) => (a.color > b.color ? -1 : a.color == b.color ? 0 : 1)));
 }
